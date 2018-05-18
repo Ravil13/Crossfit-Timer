@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E004FC75208BBF0100CF1907 /* longBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E004FC74208BBF0100CF1907 /* longBeep.mp3 */; };
+		E004FC77208BBF0800CF1907 /* shortBeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E004FC76208BBF0800CF1907 /* shortBeep.mp3 */; };
+		E0303ACA208B474C008E2B14 /* StopWatchSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0303AC9208B474C008E2B14 /* StopWatchSettingsTableViewController.swift */; };
+		E03146E52078EDD100CEF1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03146E42078EDD100CEF1F5 /* AppDelegate.swift */; };
+		E03146EA2078EDD100CEF1F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03146E82078EDD100CEF1F5 /* Main.storyboard */; };
+		E03146EC2078EDD100CEF1F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03146EB2078EDD100CEF1F5 /* Assets.xcassets */; };
+		E03146EF2078EDD100CEF1F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03146ED2078EDD100CEF1F5 /* LaunchScreen.storyboard */; };
+		E03146F82078F6BB00CEF1F5 /* Tabata.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03146F62078F6BB00CEF1F5 /* Tabata.storyboard */; };
+		E03146FA2078F6CF00CEF1F5 /* Rounds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03146F92078F6CF00CEF1F5 /* Rounds.storyboard */; };
+		E03146FD2078F6E300CEF1F5 /* Intervals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03146FB2078F6E300CEF1F5 /* Intervals.storyboard */; };
+		E03146FF2078F72700CEF1F5 /* Stopwatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03146FE2078F72700CEF1F5 /* Stopwatch.storyboard */; };
+		E03147042078F97600CEF1F5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03147032078F97600CEF1F5 /* Settings.storyboard */; };
+		E06EA2C920AEBB7F00F5E03F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E06EA2C820AEBB7F00F5E03F /* .gitignore */; };
+		E0E807DE207A459D00165ADF /* RoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E807DD207A459D00165ADF /* RoundsViewController.swift */; };
+		E0E807E1207A45C000165ADF /* IntervalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E807E0207A45C000165ADF /* IntervalsViewController.swift */; };
+		E0E807E7207A462800165ADF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E807E6207A462800165ADF /* SettingsViewController.swift */; };
+		E0E807EA207A464700165ADF /* TabataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E807E9207A464700165ADF /* TabataViewController.swift */; };
+		E0E807EC207A5A8B00165ADF /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E807EB207A5A8B00165ADF /* StopwatchViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E004FC74208BBF0100CF1907 /* longBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = longBeep.mp3; sourceTree = "<group>"; };
+		E004FC76208BBF0800CF1907 /* shortBeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shortBeep.mp3; sourceTree = "<group>"; };
+		E0303AC9208B474C008E2B14 /* StopWatchSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchSettingsTableViewController.swift; sourceTree = "<group>"; };
+		E03146E12078EDD100CEF1F5 /* Crossfit Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossfit Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03146E42078EDD100CEF1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E03146E92078EDD100CEF1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E03146EB2078EDD100CEF1F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E03146EE2078EDD100CEF1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E03146F02078EDD100CEF1F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E03146F72078F6BB00CEF1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Crossfit Timer/Base.lproj/Tabata.storyboard"; sourceTree = "<group>"; };
+		E03146F92078F6CF00CEF1F5 /* Rounds.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rounds.storyboard; sourceTree = "<group>"; };
+		E03146FC2078F6E300CEF1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Crossfit Timer/Base.lproj/Intervals.storyboard"; sourceTree = "<group>"; };
+		E03146FE2078F72700CEF1F5 /* Stopwatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stopwatch.storyboard; sourceTree = "<group>"; };
+		E03147032078F97600CEF1F5 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		E06EA2C820AEBB7F00F5E03F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E0E807DD207A459D00165ADF /* RoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsViewController.swift; sourceTree = "<group>"; };
+		E0E807E0207A45C000165ADF /* IntervalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsViewController.swift; sourceTree = "<group>"; };
+		E0E807E6207A462800165ADF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E0E807E9207A464700165ADF /* TabataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataViewController.swift; sourceTree = "<group>"; };
+		E0E807EB207A5A8B00165ADF /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E03146DE2078EDD100CEF1F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E03146D82078EDD100CEF1F5 = {
+			isa = PBXGroup;
+			children = (
+				E06EA2C820AEBB7F00F5E03F /* .gitignore */,
+				E03146E32078EDD100CEF1F5 /* Crossfit Timer */,
+				E03146E22078EDD100CEF1F5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E03146E22078EDD100CEF1F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E03146E12078EDD100CEF1F5 /* Crossfit Timer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E03146E32078EDD100CEF1F5 /* Crossfit Timer */ = {
+			isa = PBXGroup;
+			children = (
+				E004FC74208BBF0100CF1907 /* longBeep.mp3 */,
+				E004FC76208BBF0800CF1907 /* shortBeep.mp3 */,
+				E03146E42078EDD100CEF1F5 /* AppDelegate.swift */,
+				E0E807E8207A463000165ADF /* Settings */,
+				E0E807E5207A460F00165ADF /* Stopwach */,
+				E0E807E2207A45EB00165ADF /* Intervals */,
+				E0E807DF207A45AB00165ADF /* Rounds */,
+				E06BE69A20794D21004603F2 /* Tabata */,
+				E03146E82078EDD100CEF1F5 /* Main.storyboard */,
+				E03146EB2078EDD100CEF1F5 /* Assets.xcassets */,
+				E03146ED2078EDD100CEF1F5 /* LaunchScreen.storyboard */,
+				E03146F02078EDD100CEF1F5 /* Info.plist */,
+			);
+			path = "Crossfit Timer";
+			sourceTree = "<group>";
+		};
+		E06BE69A20794D21004603F2 /* Tabata */ = {
+			isa = PBXGroup;
+			children = (
+				E03146F62078F6BB00CEF1F5 /* Tabata.storyboard */,
+				E0E807E9207A464700165ADF /* TabataViewController.swift */,
+			);
+			path = Tabata;
+			sourceTree = "<group>";
+		};
+		E0E807DF207A45AB00165ADF /* Rounds */ = {
+			isa = PBXGroup;
+			children = (
+				E03146F92078F6CF00CEF1F5 /* Rounds.storyboard */,
+				E0E807DD207A459D00165ADF /* RoundsViewController.swift */,
+			);
+			path = Rounds;
+			sourceTree = "<group>";
+		};
+		E0E807E2207A45EB00165ADF /* Intervals */ = {
+			isa = PBXGroup;
+			children = (
+				E03146FB2078F6E300CEF1F5 /* Intervals.storyboard */,
+				E0E807E0207A45C000165ADF /* IntervalsViewController.swift */,
+			);
+			path = Intervals;
+			sourceTree = "<group>";
+		};
+		E0E807E5207A460F00165ADF /* Stopwach */ = {
+			isa = PBXGroup;
+			children = (
+				E03146FE2078F72700CEF1F5 /* Stopwatch.storyboard */,
+				E0E807EB207A5A8B00165ADF /* StopwatchViewController.swift */,
+				E0303AC9208B474C008E2B14 /* StopWatchSettingsTableViewController.swift */,
+			);
+			path = Stopwach;
+			sourceTree = "<group>";
+		};
+		E0E807E8207A463000165ADF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E03147032078F97600CEF1F5 /* Settings.storyboard */,
+				E0E807E6207A462800165ADF /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E03146E02078EDD100CEF1F5 /* Crossfit Timer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E03146F32078EDD100CEF1F5 /* Build configuration list for PBXNativeTarget "Crossfit Timer" */;
+			buildPhases = (
+				E03146DD2078EDD100CEF1F5 /* Sources */,
+				E03146DE2078EDD100CEF1F5 /* Frameworks */,
+				E03146DF2078EDD100CEF1F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Crossfit Timer";
+			productName = "Crossfit Timer";
+			productReference = E03146E12078EDD100CEF1F5 /* Crossfit Timer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E03146D92078EDD100CEF1F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Равиль Вильданов";
+				TargetAttributes = {
+					E03146E02078EDD100CEF1F5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E03146DC2078EDD100CEF1F5 /* Build configuration list for PBXProject "Crossfit Timer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E03146D82078EDD100CEF1F5;
+			productRefGroup = E03146E22078EDD100CEF1F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E03146E02078EDD100CEF1F5 /* Crossfit Timer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E03146DF2078EDD100CEF1F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E03146FF2078F72700CEF1F5 /* Stopwatch.storyboard in Resources */,
+				E03146FA2078F6CF00CEF1F5 /* Rounds.storyboard in Resources */,
+				E004FC77208BBF0800CF1907 /* shortBeep.mp3 in Resources */,
+				E03146FD2078F6E300CEF1F5 /* Intervals.storyboard in Resources */,
+				E06EA2C920AEBB7F00F5E03F /* .gitignore in Resources */,
+				E03147042078F97600CEF1F5 /* Settings.storyboard in Resources */,
+				E03146EF2078EDD100CEF1F5 /* LaunchScreen.storyboard in Resources */,
+				E004FC75208BBF0100CF1907 /* longBeep.mp3 in Resources */,
+				E03146F82078F6BB00CEF1F5 /* Tabata.storyboard in Resources */,
+				E03146EC2078EDD100CEF1F5 /* Assets.xcassets in Resources */,
+				E03146EA2078EDD100CEF1F5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E03146DD2078EDD100CEF1F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E807EC207A5A8B00165ADF /* StopwatchViewController.swift in Sources */,
+				E0E807DE207A459D00165ADF /* RoundsViewController.swift in Sources */,
+				E03146E52078EDD100CEF1F5 /* AppDelegate.swift in Sources */,
+				E0E807EA207A464700165ADF /* TabataViewController.swift in Sources */,
+				E0E807E1207A45C000165ADF /* IntervalsViewController.swift in Sources */,
+				E0E807E7207A462800165ADF /* SettingsViewController.swift in Sources */,
+				E0303ACA208B474C008E2B14 /* StopWatchSettingsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E03146E82078EDD100CEF1F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E03146E92078EDD100CEF1F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E03146ED2078EDD100CEF1F5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E03146EE2078EDD100CEF1F5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E03146F62078F6BB00CEF1F5 /* Tabata.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E03146F72078F6BB00CEF1F5 /* Base */,
+			);
+			name = Tabata.storyboard;
+			sourceTree = "<group>";
+		};
+		E03146FB2078F6E300CEF1F5 /* Intervals.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E03146FC2078F6E300CEF1F5 /* Base */,
+			);
+			name = Intervals.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E03146F12078EDD100CEF1F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E03146F22078EDD100CEF1F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E03146F42078EDD100CEF1F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WTRCRAQ6PL;
+				INFOPLIST_FILE = "Crossfit Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RV.Crossfit-Timer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E03146F52078EDD100CEF1F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WTRCRAQ6PL;
+				INFOPLIST_FILE = "Crossfit Timer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RV.Crossfit-Timer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E03146DC2078EDD100CEF1F5 /* Build configuration list for PBXProject "Crossfit Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E03146F12078EDD100CEF1F5 /* Debug */,
+				E03146F22078EDD100CEF1F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E03146F32078EDD100CEF1F5 /* Build configuration list for PBXNativeTarget "Crossfit Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E03146F42078EDD100CEF1F5 /* Debug */,
+				E03146F52078EDD100CEF1F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E03146D92078EDD100CEF1F5 /* Project object */;
+}

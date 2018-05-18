@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cxP-Eg-VpD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="scf-jk-FSd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cxP-Eg-VpD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5Sb-Sq-PSe"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d6i-Wh-g3F">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3Zk-AD-SuY" kind="relationship" relationship="viewControllers" id="DIu-Nd-5Ni"/>
+                        <segue destination="Zhh-u0-G1v" kind="relationship" relationship="viewControllers" id="dFX-sJ-A27"/>
+                        <segue destination="C6z-Ph-d60" kind="relationship" relationship="viewControllers" id="qEj-r9-rub"/>
+                        <segue destination="A75-9E-YVf" kind="relationship" relationship="viewControllers" id="sSi-cZ-6Gk"/>
+                        <segue destination="W5f-iG-P4I" kind="relationship" relationship="viewControllers" id="F1U-AO-PkG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyD-2s-kla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="-290"/>
+        </scene>
+        <!--Tabata-->
+        <scene sceneID="Wpo-lj-e0R">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tabata" id="3Zk-AD-SuY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Табата" image="Tabata" id="rdl-L0-933"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvm-xE-3vR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="-416"/>
+        </scene>
+        <!--Rounds-->
+        <scene sceneID="mzt-Rr-VK9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rounds" id="Zhh-u0-G1v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Раунды" image="Rounds" id="kIG-Nh-6BG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLC-jo-DAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="-353"/>
+        </scene>
+        <!--Intervals-->
+        <scene sceneID="eM2-Ch-AZZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Intervals" id="C6z-Ph-d60" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Интервалы" image="Intervals" id="PYo-1M-2wd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j36-oq-NLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="-291"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="CTL-b4-4MM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Stopwatch" id="A75-9E-YVf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Секундомер" image="Stop watch" id="Eao-L6-zkf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F7V-iJ-fua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="-226"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="J6s-ZP-ADS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="W5f-iG-P4I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="settings" id="Tfy-7W-oRX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skJ-Ix-OfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="-158"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Intervals" width="36" height="25"/>
+        <image name="Rounds" width="25" height="25"/>
+        <image name="Stop watch" width="24" height="25"/>
+        <image name="Tabata" width="38" height="25"/>
+        <image name="settings" width="30" height="30"/>
+    </resources>
+</document>
