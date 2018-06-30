@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class StopwatchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StopwatchViewController: TimerVC, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var minuteLabel: UILabel!
     @IBOutlet weak var secondsLabel: UILabel!
@@ -18,160 +18,124 @@ class StopwatchViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var resetLapButton: UIButton!
-    @IBOutlet weak var countdownLabel: UILabel! {
-        didSet {
-            countdownLabel.text = "\(delay)"
-            countdownLabel.layer.cornerRadius = countdownLabel.frame.size.height / 2
-            countdownLabel.layer.masksToBounds = true
-        }
+    @IBOutlet override weak var countdownLabel: UILabel! {
+        didSet { }
     }
     
-    var longBeepPlayer: AVAudioPlayer!
-    var shortBeepPlayer: AVAudioPlayer!
-    var timer = Timer()
-    var delayTimer = Timer()
-    var isTimerStarted = false
-    var isDelayTimerStarted = false
-    var signals = 0
-    var delay = UserDefaults.standard.integer(forKey: "StopWatchDelay")
-    var totalSec: Float = 0
-    
     var lapTimeArray = [String]()
+    var totalSec: Double = 0.0
     
+    //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.tableHeaderView = UIView()
-        setAudioPlayers()
     }
     
-    func setAudioPlayers() {
-        let longBeepUrl = Bundle.main.url(forResource: "longBeep", withExtension: "mp3")
-        let shortBeepUrl = Bundle.main.url(forResource: "shortBeep", withExtension: "mp3")
-        do {
-            longBeepPlayer = try AVAudioPlayer(contentsOf: longBeepUrl!)
-            shortBeepPlayer = try AVAudioPlayer(contentsOf: shortBeepUrl!)
-            longBeepPlayer.prepareToPlay()
-            shortBeepPlayer.prepareToPlay()
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
+    //MARK: Background/Foreground
+    @objc override func pauseWhenBackground(noti: Notification) {
+        timer.invalidate()
+        UserDefaults.standard.set(Date(), forKey: "StopWatchSavedDate")
+        print("\(Date()) ApplicationDidEnterBackground")
     }
     
-    func startCountdown() {
-        countdownLabel.isHidden = false
-        delay = UserDefaults.standard.integer(forKey: "StopWatchDelay")
-        if delay == 0 {
-            countdownLabel.isHidden = true
-            longBeepPlayer.play()
-            startTimer()
-        } else {
-            countdownLabel.text = "\(delay)"
-            delayTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
-            let animation = CABasicAnimation(keyPath: "transform.scale")
-            animation.toValue = NSNumber(value: 1.5)
-            animation.duration = 1
-            animation.repeatCount = Float(delay+1)
-            countdownLabel.layer.add(animation, forKey: nil)
-            shortBeepPlayer.play()
-        }
-    }
-    
-    @objc func countdown() {
-        delay = UserDefaults.standard.integer(forKey: "StopWatchDelay")
-        signals += 1
-        if delay - signals < 0{
-            delayTimer.invalidate()
-            signals = 0
-            countdownLabel.isHidden = true
-            isDelayTimerStarted = false
-        } else if delay - signals == 0 {
-            longBeepPlayer.play()
-            countdownLabel.text = "GO!"
-            startTimer()
-        } else {
-            isDelayTimerStarted = true
-            countdownLabel.text = "\(delay - signals)"
-            shortBeepPlayer.play()
-        }
-    }
-    
-    func startTimer () {
-        isTimerStarted = true
-        startStopButton.setTitle("Стоп", for: UIControlState.normal)
-        resetLapButton.setTitle("Круг", for: UIControlState.normal)
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer, forMode: .commonModes)
-    }
-    
-    @IBAction func startStopButtonPressed(_ sender: UIButton) {
-        if isDelayTimerStarted {
-            resetAll()
-        } else {
-            if isTimerStarted {
-                timer.invalidate()
-                signals = 0
-                isTimerStarted = false
-                startStopButton.setTitle("Старт", for: UIControlState.normal)
-                resetLapButton.setTitle("Сброс", for: UIControlState.normal)
-            } else {
-                startCountdown()
+    @objc override func willEnterForeground(noti: Notification) {
+        if isTimerWorking {
+            if let savedDate = UserDefaults.standard.object(forKey: "StopWatchSavedDate") as? Date{
+                let difSec = savedDate.timeIntervalSinceNow * -1
+                print("\(Date()) ApplicationWillEnterForeground")
+                print("dif is \(difSec)")
+                totalSec += difSec
+                startTimer()
             }
         }
     }
     
-    func resetAll() {
+    //MARK: - TIMER
+    override func startCountdown() {
+        delay = UserDefaults.standard.integer(forKey: "StopWatchDelay")
+        super.startCountdown()
+    }
+    
+    override func countdown() {
+        delay = UserDefaults.standard.integer(forKey: "StopWatchDelay")
+        super.countdown()
+    }
+    
+    override func startTimer () {
+        super.startTimer()
+        startStopButton.setTitle("Стоп", for: UIControlState.normal)
+        resetLapButton.setTitle("Круг", for: UIControlState.normal)
+    }
+    
+    @objc override func updateTimer() {
+        super.updateTimer()
+        totalSec += 0.01
+        
+        let formatedTime = getFormatedTime(from: totalSec)
+        
+        minuteLabel.text = formatedTime.min
+        secondsLabel.text = formatedTime.sec
+        miliSecondsLabel.text = formatedTime.miliSec
+        let timeToRing = UserDefaults.standard.integer(forKey: "StopWatchTimeToRing")
+        progressView.progress = Float((totalSec - Double(timeToRing * signals)) / Double(timeToRing))
+        
+        if progressView.progress == 1 {
+            signals += 1
+            longBeepPlayer.play()
+        }
+    }
+    
+    override func resetAll() {
+        super.resetAll()
+        totalSec = 0
         minuteLabel.text = "00"
         secondsLabel.text = "00"
         miliSecondsLabel.text = "00"
         progressView.progress = 0
-        totalSec = 0
-        signals = 0
         lapTimeArray.removeAll()
         tableView.reloadData()
-        timer.invalidate()
-        delayTimer.invalidate()
-        countdownLabel.isHidden = true
-        isDelayTimerStarted = false
-        isTimerStarted = false
         startStopButton.setTitle("Старт", for: UIControlState.normal)
         resetLapButton.setTitle("Сброс", for: UIControlState.normal)
+        resetLapButton.isEnabled = false
+        navigationController?.navigationBar.isUserInteractionEnabled = true
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    //MARK: - Actions
+    @IBAction func startStopButtonPressed(_ sender: UIButton) {
+        resetLapButton.isEnabled = true
+        if isDelayTimerWorking {
+            resetAll()
+        } else {
+            if isTimerWorking {
+                timer.invalidate()
+                isTimerWorking = false
+                startStopButton.setTitle("Дальше", for: UIControlState.normal)
+                resetLapButton.setTitle("Сброс", for: UIControlState.normal)
+            } else {
+                if totalSec != 0.0 {
+                    startTimer()
+                } else {
+                    startCountdown()
+                }
+            }
+            navigationController?.navigationBar.isUserInteractionEnabled = false
+            navigationController?.navigationBar.tintColor = UIColor.lightGray
+        }
     }
     
     @IBAction func resetLapButtonPressed(_ sender: UIButton) {
-        if isDelayTimerStarted {
+        if isDelayTimerWorking {
             resetAll()
         } else {
-            if isTimerStarted {
+            if isTimerWorking {
                 lapTimeArray.append("\(minuteLabel.text!):\(secondsLabel.text!),\(miliSecondsLabel.text!)")
                 tableView.reloadData()
             } else {
                 resetAll()
             }
-        }
-    }
-    
-    @objc func updateTimer() {
-        totalSec += 0.01
-        
-        let min = Int(totalSec / 60)
-        let sec = Int(totalSec) % 60
-        let miliSec = Int(totalSec * 100) % 100
-        
-        let minStr = min < 10 ? "0\(min)" : "\(min)"
-        let secStr = sec < 10 ? "0\(sec)" : "\(sec)"
-        let miliSecStr = (miliSec / 10 == 0) ? "\(miliSec)0" : "\(miliSec)"
-        
-        minuteLabel.text = minStr
-        secondsLabel.text = secStr
-        miliSecondsLabel.text = miliSecStr
-        let timeToRing = UserDefaults.standard.integer(forKey: "StopWatchTimeToRing")
-        progressView.progress = (totalSec - Float(timeToRing * signals)) / Float(timeToRing)
-        
-        if progressView.progress == 1 {
-            signals += 1
-            longBeepPlayer.play()
         }
     }
 }
